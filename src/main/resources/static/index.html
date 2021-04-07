@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather</title>
+    <style type="text/css">
+        #map {
+            height: 400px;
+            width: 100%;
+            background-color: grey;
+        }
+    </style>
 </head>
 <body>
 <center>
@@ -16,15 +23,15 @@
     <div  class="container bg-warning xtext-white py-2" id="formulario">
         <form>
             <input placeholder="City name" id="cityName"/>
-            <button class="btn btn-success" type="button"> Search </button>
+            <button class="btn btn-success" type="button" onclick="app.getWeatherByCityName(cityName.value)"> Search </button>
         </form>
     </div>
 
-    <div class="container bg-dark text-white py-2" id="info">
+    <div class="container bg-dark text-white py-2" id="informacion" style="visibility: hidden">
         <div >
             <h5> General </h5>
         </div>
-        <div class="row" id="general">
+        <div class="row" id="general" >
             <label class="col-12" id="cname"></label>
             <label class="col-12" id="ctimezone"></label>
             <label class="col-12" id="cweather"></label>
@@ -34,7 +41,7 @@
     <div id="map"/>
 </center>
 
-    <script src="/static/js/map.js"></script>
+    <script src="/js/app.js"></script>
     <script src="/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js"></script>
 
 </body>
