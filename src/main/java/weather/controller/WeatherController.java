@@ -16,9 +16,9 @@ public class WeatherController {
     IWeatherServices weatherServices;
 
     @RequestMapping(value="/weather/{city}", method = RequestMethod.GET)
-    public ResponseEntity<?> getWeatherByCity(@PathVariable(name="city") String city) {
+    public ResponseEntity<?> getWeatherByCity(@PathVariable(name="city") String cityName) {
         try {
-            return new ResponseEntity<>(weatherServices.getWeatherByCity(city), HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(weatherServices.getWeatherByCityName(cityName), HttpStatus.ACCEPTED);
         }catch(Exception e){
             return new ResponseEntity<>("Ha ocurrido un error", HttpStatus.BAD_REQUEST);
         }

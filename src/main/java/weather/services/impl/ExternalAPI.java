@@ -1,18 +1,27 @@
 package weather.services.impl;
 
-import com.google.gson.JsonObject;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import org.json.JSONObject;
+import org.springframework.stereotype.Service;
 import weather.services.IExternalAPI;
 
-import java.net.http.HttpResponse;
+import java.io.IOException;
 
+
+@Service
 public class ExternalAPI implements IExternalAPI {
 
     public ExternalAPI(){}
 
     @Override
-    public JsonObject getWeatherByCityName(String cityName) {
-        HttpResponse<String> response = Unirest.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ea9c5a7d873963c1abb9207fc904db83")
-                .asString();
+    public JSONObject getWeatherByCityName(String cityName) throws UnirestException {
+        String url = String.format("http://api.openweathermap.org/data/2.5/weather?q=%s&appid=79a888aec0f5cf1eddaf9b5e0b2063af", cityName);
+        HttpResponse<JsonNode> response = Unirest.get(url).asJson();
         return new JSONObject(response.getBody());
     }
+
+
 }

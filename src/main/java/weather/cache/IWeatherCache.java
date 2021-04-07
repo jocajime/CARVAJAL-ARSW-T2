@@ -1,4 +1,11 @@
 package weather.cache;
 
-public class IWeatherCache {
+import org.json.JSONObject;
+
+public interface IWeatherCache {
+
+    boolean CityInCache(String cityName);
+
+    JSONObject getWeatherByCityName(String cityName);
+
 }

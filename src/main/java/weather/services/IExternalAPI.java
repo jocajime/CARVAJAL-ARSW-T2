@@ -1,9 +1,10 @@
 package weather.services;
 
-import com.google.gson.JsonObject;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import org.json.JSONObject;
 
 public interface IExternalAPI {
 
-    JsonObject getWeatherByCityName(String cityName);
+    JSONObject getWeatherByCityName(String cityName) throws UnirestException;
 
 }

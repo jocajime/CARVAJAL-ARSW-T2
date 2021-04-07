@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+</head>
+<body>
+<center>
+
+    <div class="container bg-primary text-white py-2">
+        <h1 style="color:Tomato;">WEATHER BY CITYNAME</h1>
+        <h3 style="color:black;">Here you can find information about the climate of the city you prefer, enter the name of the city and find the information you need.</h3>
+    </div>
+
+
+    <div  class="container bg-warning xtext-white py-2" id="formulario">
+        <form>
+            <input placeholder="City name" id="cityName"/>
+            <button class="btn btn-success" type="button"> Search </button>
+        </form>
+    </div>
+
+    <div class="container bg-dark text-white py-2" id="info">
+        <div >
+            <h5> General </h5>
+        </div>
+        <div class="row" id="general">
+            <label class="col-12" id="cname"></label>
+            <label class="col-12" id="ctimezone"></label>
+            <label class="col-12" id="cweather"></label>
+            <label class="col-12" id="cclouds"></label>
+        </div>
+    </div>
+    <div id="map"/>
+</center>
+
+    <script src="/js/app.js"></script>
+    <script src="/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&language=en"
+            type="text/javascript"></script>
+
+
+</body>
+</html>
