@@ -11,11 +11,19 @@ public class WeatherCache implements IWeatherCache {
     private ArrayList<String> citys;
     private ArrayList<JSONObject> citysJSON;
 
+    /**
+     * @param cityName
+     * @return
+     */
     @Override
     public boolean CityInCache(String cityName) {
         return false;
     }
 
+    /**
+     * @param cityName
+     * @return
+     */
     @Override
     public JSONObject getWeatherByCityName(String cityName) {
         return null;

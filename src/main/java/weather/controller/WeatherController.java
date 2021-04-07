@@ -15,6 +15,10 @@ public class WeatherController {
     @Autowired
     IWeatherServices weatherServices;
 
+    /**
+     * @param cityName
+     * @return
+     */
     @RequestMapping(value="/weather/{city}", method = RequestMethod.GET)
     public ResponseEntity<?> getWeatherByCity(@PathVariable(name="city") String cityName) {
         try {
