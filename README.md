@@ -1,4 +1,36 @@
-# Escuela Colombiana de Ingeniería Julio Garavito - Arquitecturas de Software ARSW - Parcial Segundo Tercio
+# Escuela Colombiana de Ingeniería Julio Garavito - Arquitecturas de Software ARSW - Parcial Segundo Tercio - Joel Carvajal
+
+## Descripción Diseño
+
+Aqui se presenta una aplicación web en la que se dará información del clima de diferentes ciudades.
+
+Organizado y preparado para su correcta extensión, todo se tiene dividido en paquetes para un mejor entendimiento
+
+- **cache**: se guardara el cache de la aplicación para no "abusar" del api externo.
+- **controller**: aqui se presentan los servicios REST donde en este caso tendremos un GET.
+- **model**: para representar los distintos objetos tendremos las diferentes clases representadas por el JSON del api de [openweathermap](https://openweathermap.org/ )
+- **services**: Tenemos dos servicios en este paquete, donde uno presentara los servicios lógicos del servicio web y responderá a este con la información de la ciudad, ademas, de tener en este la conexión al pi externo de [openweathermap](https://openweathermap.org/ )
+
+Este servicio busca ser eficiente por medio de la implementación de **CACHE**, sumando  por medio de **Inyección de dependencias** una facil posibilidad de extender este código.
+
+## Instalacion local
+
+pre-requisitos:
+
+- Maven
+- Java 1.8 o +
+
+Proceso
+
+1. podemos clonar el repositorio con el siguiente comando: `git clone https://github.com/jocajime/CARVAJAL-ARSW-T2`
+2. podemos realizar de dos maneras la ejecución:
+	1. Maven: `mvn clean install` - `mvn spring-boot:run`
+	2. Heroku: (debemos tener heroku CLI) `heroku ps` - `heroku local web`
+3. ingresar por un navegador a nuestro servicio.
+
+## Servicio externo
+en caso de que un proveedor quiera implementar un servicio (en este caso a la función del clima), simplemente debe realizar una petición get a este servicio, pues nuestro aplicativo responderá con un JSON con la información solicitada.
+
 
 ## Preparación para el Parcial
 
